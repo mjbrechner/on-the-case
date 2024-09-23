@@ -46,14 +46,34 @@ function sentenceCase() {
     }
     textSentenceCase = textSentenceCase.join("! ");
 
+    // When the whole string begins with a double quote, the following should capitalize the first word.
+    if (textSentenceCase.charAt(0) === `"`) {
+        textSentenceCase = `"` + textSentenceCase.charAt(1).toUpperCase() + textSentenceCase.slice(2);
+    }
+
     // When the whole string begins with a single quote/apostrophe, the following should capitalize the first word.
     if (textSentenceCase.charAt(0) === `'`) {
         textSentenceCase = `'` + textSentenceCase.charAt(1).toUpperCase() + textSentenceCase.slice(2);
     }
 
-    // When the whole string begins with a double quote, the following should capitalize the first word.
-    if (textSentenceCase.charAt(0) === `"`) {
-        textSentenceCase = `"` + textSentenceCase.charAt(1).toUpperCase() + textSentenceCase.slice(2);
+    // When the whole string begins with a double left smart quote, the following should capitalize the first word.
+    if (textSentenceCase.charAt(0) === `“`) {
+        textSentenceCase = `“` + textSentenceCase.charAt(1).toUpperCase() + textSentenceCase.slice(2);
+    }
+
+    // When the whole string begins with a double right smart quote, the following should capitalize the first word.
+    if (textSentenceCase.charAt(0) === `”`) {
+        textSentenceCase = `”` + textSentenceCase.charAt(1).toUpperCase() + textSentenceCase.slice(2);
+    }
+
+    // When the whole string begins with a single left smart quote, the following should capitalize the first word.
+    if (textSentenceCase.charAt(0) === `‘`) {
+        textSentenceCase = `‘` + textSentenceCase.charAt(1).toUpperCase() + textSentenceCase.slice(2);
+    }
+
+    // When the whole string begins with a single right smart quote, the following should capitalize the first word.
+    if (textSentenceCase.charAt(0) === `’`) {
+        textSentenceCase = `’` + textSentenceCase.charAt(1).toUpperCase() + textSentenceCase.slice(2);
     }
 
     document.getElementById("original-text").value = textSentenceCase;
@@ -71,17 +91,31 @@ function titleCase() {
     textTitleCase = textTitleCase.join(' ');
 
 
-   // Capitalize after double quotes
+    // Capitalize after double quotes
     textTitleCase = textTitleCase.split(`"`);
     for (var i = 0; i < textTitleCase.length; i++) {
         textTitleCase[i] = textTitleCase[i].charAt(0).toUpperCase() + textTitleCase[i].slice(1);
     }
     textTitleCase = textTitleCase.join(`"`);
 
-   // Capitalize after single quotes. Because the basic character for a (non-smart) single quote is also an apostrophe, I don't
-   // want to capitalize it in all circumstances. Thus, the following code only capitalizes a single quote following a space. That
-   // should preserve lowercase around aprostrophes but not at the beginning of words. This should work in most cases, except when
-   // a single quote starts the whole string (to be addressed below).
+    // Capitalize after double smart left quote
+    textTitleCase = textTitleCase.split(`“`);
+    for (var i = 0; i < textTitleCase.length; i++) {
+        textTitleCase[i] = textTitleCase[i].charAt(0).toUpperCase() + textTitleCase[i].slice(1);
+    }
+    textTitleCase = textTitleCase.join(`“`);
+
+    // Capitalize after double smart right quote
+    textTitleCase = textTitleCase.split(`”`);
+    for (var i = 0; i < textTitleCase.length; i++) {
+        textTitleCase[i] = textTitleCase[i].charAt(0).toUpperCase() + textTitleCase[i].slice(1);
+    }
+    textTitleCase = textTitleCase.join(`”`);
+
+    // Capitalize after single quotes. Because the basic character for a (non-smart) single quote is also an apostrophe, I don't
+    // want to capitalize it in all circumstances. Thus, the following code only capitalizes a single quote following a space. That
+    // should preserve lowercase around aprostrophes but not at the beginning of words. This should work in most cases, except when
+    // a single quote starts the whole string (to be addressed below).
     textTitleCase = textTitleCase.split(` '`);
     for (var i = 0; i < textTitleCase.length; i++) {
         textTitleCase[i] = textTitleCase[i].charAt(0).toUpperCase() + textTitleCase[i].slice(1);
@@ -91,6 +125,28 @@ function titleCase() {
     // When the whole string begins with a single quote/apostrophe, the following should capitalize the first word.
     if (textTitleCase.charAt(0) === `'`) {
         textTitleCase = `'` + textTitleCase.charAt(1).toUpperCase() + textTitleCase.slice(2);
+    }
+
+    // Capitalize after single smart left quote. The smart left quote doesn't generally serve as an apostrophe, but I'm treating it the same way just in case.
+    textTitleCase = textTitleCase.split(` ‘`);
+    for (var i = 0; i < textTitleCase.length; i++) {
+        textTitleCase[i] = textTitleCase[i].charAt(0).toUpperCase() + textTitleCase[i].slice(1);
+    }
+    textTitleCase = textTitleCase.join(` ‘`);
+
+   if (textTitleCase.charAt(0) === `‘`) {
+        textTitleCase = `‘` + textTitleCase.charAt(1).toUpperCase() + textTitleCase.slice(2);
+    }
+
+    // Capitalize after single smart right quote. The smart left quote doesn't generally serve as an apostrophe, but I'm treating it the same way just in case.
+    textTitleCase = textTitleCase.split(` ’`);
+    for (var i = 0; i < textTitleCase.length; i++) {
+        textTitleCase[i] = textTitleCase[i].charAt(0).toUpperCase() + textTitleCase[i].slice(1);
+    }
+    textTitleCase = textTitleCase.join(` ’`);
+
+   if (textTitleCase.charAt(0) === `’`) {
+        textTitleCase = `’` + textTitleCase.charAt(1).toUpperCase() + textTitleCase.slice(2);
     }
 
     document.getElementById("original-text").value = textTitleCase;
