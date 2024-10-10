@@ -29,18 +29,24 @@
     <main>
         <h3 id="text-copied-message">text copied!</h3>
         <textarea id="original-text" aria-label="textbox"></textarea>
-        <div class="case-button-area">
-            <button class="buttons" id="uppercase-button" onclick="upperCase()">Uppercase</button>
-            <button class="buttons" id="lowercase-button" onclick="lowerCase()">Lowercase</button>
-            <button class="buttons" id="sentencecase-button" onclick="sentenceCase()">Sentence Case</button>
-            <button class="buttons" id="titlecase-button" onclick="titleCase()">Title Case</button>
+        <div class="button-area">
+            <div class="case-button-area">
+                <button class="buttons" id="uppercase-button" onclick="upperCase()">Uppercase</button>
+                <button class="buttons" id="lowercase-button" onclick="lowerCase()">Lowercase</button>
+                <button class="buttons" id="sentencecase-button" onclick="sentenceCase()">Sentence Case</button>
+                <button class="buttons" id="titlecase-button" onclick="titleCase()">Title Case</button>
+            </div>
+            <div class="copy-erase-button-area">
+                <button class="buttons copy-erase-button" onclick="textCopier()">Copy Text</button>
+                <button class="buttons copy-erase-button" onclick="textEraser()">Erase Text</button>
+            </div>
         </div>
-        <button class="buttons" id="copier-button" onclick="textCopier()">Copy Text</button>
-        <button class="buttons" id="copier-button" onclick="textEraser()">Erase Text</button>
     </main>
     <footer>
         <p>
-            <script>document.write(`Copyright © 2022-${new Date().getFullYear()} `);</script>
+            <script>
+                document.write(`Copyright © 2022-${new Date().getFullYear()} `);
+            </script>
             <a href="https://github.com/mjbrechner">M.J. Brechner</a>
         </p>
         <!-- Profile picture/favicon created by M.J. Brechner © 2022 -->

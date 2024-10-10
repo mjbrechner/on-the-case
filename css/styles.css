@@ -106,14 +106,14 @@ main {
     transform: translate(1px);
 }
 
-#copier-button {
-    margin-top: 1em;
+.copy-erase-button {
+    margin-top: .25em;
     background-color: #519259;
     color: #F4EEA9;
     box-shadow: 3px 3px #5192597e;
 }
 
-#copier-button:active {
+.copy-erase-button:active {
     box-shadow: 1px 1px #f0bc6283;
     transform: translate(1px);
 }
@@ -178,8 +178,8 @@ a {
         grid-template-columns: repeat(4, auto);
     }
 
-    #copier-button {
-        margin-top: 1.5em;
+    .copy-erase-button {
+        margin-top: .5em;
     }
 
     footer {
@@ -226,10 +226,6 @@ a {
     .buttons {
         font-size: 1.2em;
         font-weight: 500;
-    }
-
-    #copier-button {
-        margin-top: 1.75em;
     }
 
     footer {
