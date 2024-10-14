@@ -31,7 +31,7 @@ body {
     font-size: .7em;
     border-style: solid;
     border-radius: 3px;
-    border-width: 1px;
+    border-width: 0;
     cursor: pointer;
 }
 
@@ -106,14 +106,14 @@ main {
     transform: translate(1px);
 }
 
-.copy-erase-button {
+#copy-button, #erase-button {
     margin-top: .25em;
     background-color: #519259;
     color: #F4EEA9;
     box-shadow: 3px 3px #5192597e;
 }
 
-.copy-erase-button:active {
+#copy-button:active, #erase-button:active {
     box-shadow: 1px 1px #f0bc6283;
     transform: translate(1px);
 }
@@ -178,7 +178,7 @@ a {
         grid-template-columns: repeat(4, auto);
     }
 
-    .copy-erase-button {
+    #copy-button, #erase-button {
         margin-top: .5em;
     }
 
